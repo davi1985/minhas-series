@@ -11,12 +11,11 @@ class App extends Component {
       genres: [],
       isLoading: false
     }
-    
   }
   componentDidMount() {
     this.setState({ isLoading: true })
-    api.loadGenres()
-      .then((res) => {
+
+    api.loadGenres().then((res) => {
         this.setState({
           isLoading: false,
           genres: res.data
@@ -75,7 +74,6 @@ class App extends Component {
               {this.state.genres.map(this.renderGenreLink)}
             </div>
           }
-
         </section>
       </div>
     )
